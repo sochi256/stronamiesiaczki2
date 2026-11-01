@@ -1,4 +1,5 @@
-import { Moon, Sparkles, ArrowDown, Calendar, Droplet, BookOpen } from 'lucide-react';
+import { Moon, Sparkles, ArrowDown, Calendar, Droplet, BookOpen, Layers } from 'lucide-react';
+import { RouteLink } from '@/components/RouteLink';
 
 export function Hero() {
   return (
@@ -44,6 +45,14 @@ export function Hero() {
               <Calendar className="w-5 h-5 text-primary-500" />
               Poznaj fazy cyklu
             </a>
+            <RouteLink
+              to="/tematy"
+              className="flex items-center gap-2 px-7 py-4 rounded-full bg-white/80 border border-primary-200 text-ink font-600 hover:border-primary-400 hover:bg-white transition-all duration-300"
+              style={{ textDecoration: 'none' }}
+            >
+              <Layers className="w-5 h-5 text-primary-500" />
+              Przeglądaj tematy
+            </RouteLink>
           </div>
 
           <div className="flex gap-8 mt-10">
