@@ -1,11 +1,12 @@
 import { Moon, Heart, Mail, Phone, ExternalLink } from 'lucide-react';
+import { RouteLink } from '@/components/RouteLink';
 
 const resources = [
-  { label: 'Wiedza o cyklu', href: '#fazy-cyklu' },
-  { label: 'Objawy i pomoc', href: '#objawy' },
-  { label: 'Higiena', href: '#higiena' },
-  { label: 'Mity i fakty', href: '#mity' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Wiedza o cyklu', href: '/#fazy-cyklu' },
+  { label: 'Objawy i pomoc', href: '/#objawy' },
+  { label: 'Higiena', href: '/#higiena' },
+  { label: 'Mity i fakty', href: '/#mity' },
+  { label: 'FAQ', href: '/#faq' },
 ];
 
 const helplines = [
@@ -52,6 +53,15 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <RouteLink
+                  to="/tematy"
+                  className="text-sm text-white/50 hover:text-primary-300 transition-colors"
+                  style={{ textDecoration: 'none' }}
+                >
+                  Wszystkie tematy
+                </RouteLink>
+              </li>
             </ul>
           </div>
 

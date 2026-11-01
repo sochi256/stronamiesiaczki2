@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Moon, Heart, BookOpen, Menu, X } from 'lucide-react';
+import { Moon, BookOpen, Menu, X } from 'lucide-react';
+import { RouteLink } from '@/components/RouteLink';
 
 const navLinks = [
-  { href: '#co-to-jest', label: 'Co to jest' },
-  { href: '#fazy-cyklu', label: 'Fazy cyklu' },
-  { href: '#objawy', label: 'Objawy' },
-  { href: '#higiena', label: 'Higiena' },
-  { href: '#mity', label: 'Mity i fakty' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#co-to-jest', label: 'Co to jest' },
+  { href: '/#fazy-cyklu', label: 'Fazy cyklu' },
+  { href: '/#objawy', label: 'Objawy' },
+  { href: '/#higiena', label: 'Higiena' },
+  { href: '/#mity', label: 'Mity i fakty' },
+  { href: '/#faq', label: 'FAQ' },
 ];
 
 export function Header() {
@@ -27,7 +28,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5 group">
+        <a href="/" className="flex items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-300/40 group-hover:scale-110 transition-transform duration-300">
             <Moon className="w-5 h-5 text-white" />
           </div>
@@ -46,11 +47,17 @@ export function Header() {
               {link.label}
             </a>
           ))}
+          <RouteLink
+            to="/tematy"
+            className="px-4 py-2 rounded-full text-sm font-500 text-ink/70 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200"
+          >
+            Tematy
+          </RouteLink>
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="#faq"
+            href="/#faq"
             className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm font-600 shadow-lg shadow-primary-300/40 hover:shadow-xl hover:shadow-primary-300/50 hover:-translate-y-0.5 transition-all duration-300"
           >
             <BookOpen className="w-4 h-4" />
@@ -80,6 +87,13 @@ export function Header() {
                 {link.label}
               </a>
             ))}
+            <RouteLink
+              to="/tematy"
+              onClick={() => setMenuOpen(false)}
+              className="px-4 py-3 rounded-xl text-sm font-500 text-ink/80 hover:text-primary-600 hover:bg-primary-50 transition-all"
+            >
+              Tematy
+            </RouteLink>
           </nav>
         </div>
       )}
